@@ -22,7 +22,6 @@ RUN apt-get update && \
 
 # install renv & restore packages
 RUN Rscript -e 'install.packages(c("shiny", "shinydashboard", "plyr", "tidyverse","ggpubr","reshape","RColorBrewer", "repr", "plotly" ))'
-
 RUN Rscript -e 'install.packages("remotes"); library(remotes); install_version("shinydashboardPlus", version = "0.7.5")'
 
 COPY /ShinyApp ./app
